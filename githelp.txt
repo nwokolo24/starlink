@@ -1,0 +1,97 @@
+GITHUB TERMINAL COMMANDS
+
+This is a reference sheet to help when using github to collaborate on projects.
+It explains:
+    How to clone a repository
+    Pulling and pushing code
+    Working with branches
+    Using pull requests
+    Order of operations
+If you haven't used git read through the whole thing or if you have use CTRL-F to find parts you're looking for.
+
+
+CLONING A REPOSITORY
+The first step before you start working is cloning the repository to your machine.
+
+    - open a folder in vscode where you want the repository to be.
+    - find your repository on the github website and look for the green "code" button. the repo link is located there.
+    - run this command in your vscode terminal.
+    > git clone [repository link]
+    - Then you'll either want to cd into the folder or open the repository file in vscode.
+
+* NONE OF THE FOLLOWING COMMANDS WILL WORK IF YOU'RE NOT IN THE GITHUB REPO FILE *
+
+PULLING CODE
+To make sure you code is up to date, run this command everytime before you start working:
+
+    >git pull
+
+This pulls from the main branch on github and puts it on your local machine.
+
+CREATING A BRANCH
+When you want to start making changes to the code run this command:
+
+    >git checkout -b [branch name]
+
+Creates a new branch and swithces you to that branch. You can change and edit all you want and will be able to push it
+without affecting the main code.
+
+Other commands relating to branches:
+
+    Checking what branch you're on:
+        >git branch
+    Switching branches:
+        >git checkout [branch name]
+    Deleting your branch (need to switch off it before you can delete it):
+        >git branch -d [branch name]
+
+PUSHING YOUR BRANCH TO GITHUB
+After you finish your edits and are ready to push it follow these commands:
+
+    >git add [filename] or >git add . (a dot will add all files changed)
+    >git commit -m "[description of what you changed]"
+    >git push 
+    you might get an error message in that case copy and paste the code it gives you, it'll look like this:
+    >git branch --set-upstream origin [branch name]
+
+Now if you go to your repository on the github website you should see your branch.
+
+
+OPENING A PULL REQUEST
+Now that your branch is on github you can use the website interface to open a pull request. A pull request is 
+you asking someone to review your code and merge it into the main branch.
+
+    - Go to your repository
+    - Click on the "Pull requests" tab towards the top.
+    - Select your branch that you made changes to.
+    - Click on the green "create pull request" button.
+    - You can write a comment if you want then hit the "create pull request" button again.
+
+Your pull request is now posted and you can notify a group member to review it.
+
+REVIEWING AND MERGING A PULL REQUEST
+When you're reviewing a pull request it's your responsibility to look at the code and make sure there are no mistakes.
+You don't wanna merge bad code into main, if you do when people pull it everyones code will be broken. 
+
+    - Go to your repository.
+    - Click on the "Pull requests" tab.
+    - Find and click the open pull request you've been asked to review.
+    - Review code then click the green drop down arrow and select "squash and merge"
+    - You can now delete the branch in github and your terminal
+
+ORDER OF OPERATIONS
+These are the steps you should follow when making changes:
+1. pull code
+2. make a branch
+3. edit code
+4. push branch
+5. open pull request
+6. get someone to merge it
+7. delete branch
+
+
+
+
+
+
+
