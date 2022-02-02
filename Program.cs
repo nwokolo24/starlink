@@ -12,7 +12,7 @@ namespace starlink
         public int randomCard()
         {
             Random numberGen = new Random();
-            int cardNum = numberGen.Next(1, 13);
+            int cardNum = numberGen.Next(1, 14);
             return cardNum;
         }
 
@@ -30,14 +30,22 @@ namespace starlink
             Console.Write("Higher or lower? [h/l]: ");
             string userInput = Console.ReadLine();
 
+            //Handling for the next card being either higher or lower
             if ((card.draw2 < card.draw1 && userInput == "l") || (card.draw2 > card.draw1 && userInput == "h"))
             {
                 myScore = myScore + 100;
             } 
+            else if (card.draw2 == card.draw1)
+            {
+                myScore = myScore;
+            }
             else
             {
             myScore = myScore - 75; 
             }
+
+            //Handling for the next card being the same
+            
 
             //Ends the game if the player reaches 0 points
             if (myScore <= 0)
